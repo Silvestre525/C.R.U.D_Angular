@@ -11,9 +11,10 @@ export class AppComponent implements OnInit {
 
   constructor(private service: JsonPlaceholderService) {}
 
+  /* Get */
   ngOnInit(): void {
-    this.service.getAllJsonPlaceholder().subscribe((placeHolder: any) => {
-      this.placeHolder = placeHolder.result;
+    this.service.getAllJsonPlaceholder().subscribe((placeHolder2: any) => {
+      this.placeHolder = placeHolder2.result;
       console.log(this.placeHolder);
     });
   }
