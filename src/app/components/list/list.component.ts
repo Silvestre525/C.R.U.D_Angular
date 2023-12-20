@@ -10,7 +10,8 @@ export class ListaPostsComponent implements OnInit {
   posts: any[] = [];
   filteredPosts: any[] = [];
   searchText = '';
-  p: number = 1; // Página actual, inicializada en 1
+   p: number = 1; // Inicializando la propiedad 'p' con valor 1
+  
 
   constructor(private jsonService: JsonPlaceholderService) {}
 
@@ -26,8 +27,14 @@ export class ListaPostsComponent implements OnInit {
   }
 
   filterPosts(): void {
-    this.filteredPosts = this.posts.filter(post =>
-      post.title.toLowerCase().includes(this.searchText.toLowerCase())
-    );
+    if (this.searchText) {
+      this.filteredPosts = this.posts.filter(post =>
+        post.title.toLowerCase().includes(this.searchText.toLowerCase())
+      );
+      this.p = 1; // Resetear la página a la primera al realizar una nueva búsqueda
+    } else {
+      this.filteredPosts = this.posts;
+    }
   }
+  
 }

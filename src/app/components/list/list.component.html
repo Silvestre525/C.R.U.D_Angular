@@ -1,6 +1,13 @@
 <div class="container">
-  <input class="form-control me-2" type="text" [(ngModel)]="searchText" (keyup)="filterPosts()" placeholder="Buscar por título...">
-
+  <!-- seach -->
+  <div class="row mt-3 mb-3">
+    <div class="col">
+      <div class="form-group">
+        <input class="form-control me-2" type="text" [(ngModel)]="searchText" (input)="filterPosts()" placeholder="Buscar por título...">
+      </div>  
+    </div>
+  </div>
+<!-- list -->
   <div class="row">
     <div class="col-lg-4 col-md-6 mb-4" *ngFor="let post of filteredPosts | paginate: { itemsPerPage: 10, currentPage: p }">
       <div class="card">
@@ -11,8 +18,6 @@
       </div>
     </div>
   </div>
-
+  <!-- pagination -->
   <pagination-controls (pageChange)="p = $event" class="pagination" previousLabel="&laquo;" nextLabel="&raquo;"></pagination-controls>
-
-  
 </div>
