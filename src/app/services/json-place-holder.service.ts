@@ -18,4 +18,9 @@ export class JsonPlaceholderService {
     return this.http.get(this.apiUrl);
   }
 
+  //Post
+  createPost(postData: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl, postData);
+  }
+
 }

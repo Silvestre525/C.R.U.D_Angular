@@ -1,1 +1,8 @@
-<p>list works!</p>
+<div class="container">
+  <input class="form-control me-2" type="text" [(ngModel)]="searchText" (keyup)="filterPosts()" placeholder="Buscar por título...">
+  <div *ngFor="let post of filteredPosts | paginate: { itemsPerPage: 10, currentPage: p }">
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.body }}</p>
+  </div>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
