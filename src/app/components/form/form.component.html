@@ -1,13 +1,19 @@
 <div class="container">
   <h2>Nuevo Post</h2>
-  <form (ngSubmit)="onSubmit()">
+  <form (ngSubmit)="onSubmit()" [formGroup]="newPostForm">
     <div class="form-group">
       <label for="title">Título:</label>
-      <input type="text" class="form-control" id="title" name="title" [(ngModel)]="newPost.title" required>
+      <input type="text" class="form-control" id="title" formControlName="title">
+      <div *ngIf="newPostForm.get('title')?.invalid && (newPostForm.get('title')?.dirty || newPostForm.get('title')?.touched)" class="text-danger">
+        <div *ngIf="newPostForm.get('title')?.hasError('required')">El título es obligatorio.</div>
+      </div>
     </div>
     <div class="form-group">
       <label for="body">Cuerpo:</label>
-      <textarea class="form-control" id="body" name="body" [(ngModel)]="newPost.body" required></textarea>
+      <textarea class="form-control" id="body" formControlName="body"></textarea>
+      <div *ngIf="newPostForm.get('body')?.invalid && (newPostForm.get('body')?.dirty || newPostForm.get('body')?.touched)" class="text-danger">
+        <div *ngIf="newPostForm.get('body')?.hasError('required')">El cuerpo es obligatorio.</div>
+      </div>
     </div>
     <button type="submit" class="btn btn-primary">Crear Post</button>
   </form>

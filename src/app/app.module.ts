@@ -10,6 +10,7 @@ import { ListaPostsComponent } from './components/list/list.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -31,6 +32,7 @@ const appRoutes:Routes=[
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     NgxPaginationModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes)
