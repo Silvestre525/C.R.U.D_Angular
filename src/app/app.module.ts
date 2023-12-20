@@ -8,12 +8,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormComponent } from './components/form/form.component';
 import { ListaPostsComponent } from './components/list/list.component';
 import { RouterModule, Routes } from '@angular/router';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
 
 const appRoutes:Routes=[
-  {path: 'list', component: ListaPostsComponent},
+  {path: '', component: ListaPostsComponent},
   {path: 'form', component: FormComponent}
 ];
 
@@ -22,6 +24,8 @@ const appRoutes:Routes=[
     AppComponent,
     FormComponent,
     ListaPostsComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
