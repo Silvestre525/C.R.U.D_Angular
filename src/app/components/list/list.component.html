@@ -1,5 +1,5 @@
 <div class="container">
-  <!-- seach -->
+  <!-- Search -->
   <div class="row mt-3 mb-3">
     <div class="col">
       <div class="form-group">
@@ -7,7 +7,8 @@
       </div>  
     </div>
   </div>
-<!-- list -->
+
+  <!-- List of cards -->
   <div class="row">
     <div class="col-lg-4 col-md-6 mb-4" *ngFor="let post of filteredPosts | paginate: { itemsPerPage: 10, currentPage: p }">
       <div class="card">
@@ -18,6 +19,11 @@
       </div>
     </div>
   </div>
-  <!-- pagination -->
-  <pagination-controls (pageChange)="p = $event" class="pagination" previousLabel="&laquo;" nextLabel="&raquo;"></pagination-controls>
+
+  <!-- Pagination controls -->
+  <div class="row">
+    <div class="col">
+      <pagination-controls (pageChange)="p = $event" class="pagination" previousLabel="Atras" nextLabel="Siguiente"></pagination-controls>
+    </div>
+  </div>
 </div>

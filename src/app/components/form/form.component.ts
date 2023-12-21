@@ -8,6 +8,7 @@ import { JsonPlaceholderService } from '../../services/json-place-holder.service
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
+
   newPostForm!: FormGroup;
 
   constructor(
@@ -29,7 +30,7 @@ export class FormComponent implements OnInit {
       this.jsonService.createPost(newPostData).subscribe(
         (response: any) => {
           console.log('Post creado:', response);
-          // Realizar acciones después de crear el post (redireccionar, mostrar mensaje, etc.)
+          // Realizar acciones después de crear el post (redireccionar, mostrar mensaje)
         },
         (error: any) => {
           console.error('Error al crear el post:', error);

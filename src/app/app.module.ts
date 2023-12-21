@@ -13,9 +13,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
-
-
-
 const appRoutes:Routes=[
   {path: '', component: ListaPostsComponent},
   {path: 'form', component: FormComponent}

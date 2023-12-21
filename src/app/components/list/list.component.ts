@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JsonPlaceholderService } from '../../services/json-place-holder.service';
 
+/* Aca es donde va implementada la logica del frontend y en donde trabajamos con los endpoints que recibimos del backend */
 @Component({
   selector: 'app-lista-posts',
   templateUrl: './list.component.html',
@@ -10,7 +11,7 @@ export class ListaPostsComponent implements OnInit {
   posts: any[] = [];
   filteredPosts: any[] = [];
   searchText = '';
-   p: number = 1; // Inicializando la propiedad 'p' con valor 1
+   p: number = 1; 
   
 
   constructor(private jsonService: JsonPlaceholderService) {}
